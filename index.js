@@ -150,7 +150,7 @@ function DegerlendirmeEkle(yeniDeğerlendirmeler,alinanisim, alinanpuan,alinange
   yeniDeğerlendirmeler.push(newObject);
   return yeniDeğerlendirmeler;
 }
-console.log(DegerlendirmeEkle(degerlendirmeler,"tuna",6,"çok güzel bir mekan tavsiye ederim."));
+//console.log(DegerlendirmeEkle(degerlendirmeler,"tuna",6,"çok güzel bir mekan tavsiye ederim."));
 
 /*  Görev 6: 
 	Dizideki değerlendirmelerin anahtarına(key,index) bağlı olarak bir değerlendirme döndüren bir fonksiyon yazın
@@ -162,9 +162,13 @@ console.log(DegerlendirmeEkle(degerlendirmeler,"tuna",6,"çok güzel bir mekan t
 	Örnek: AnahtardanDegerlendirmeAl(degerlendirmeler,0) şunu döndürmeli: "Nalan isimli kişi 5 puan verdi ve şunları yazdı: Mükemmel atmosfer ve mükemmel vegan seçenekleri!"
 */
 
-function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
-  /*Kodlar buraya*/
+function AnahtardanDegerlendirmeAl(alinanArray,alinanIndex) {
+
+   return `${alinanArray[alinanIndex]["isim"]+" "+"isimli kişi"+" "+alinanArray[alinanIndex]["puan"]+" "+"puan verdi ve şunları yazdı:"+" "+ alinanArray[alinanIndex]["geribildirim"]}`;
+   
 }
+
+console.log(AnahtardanDegerlendirmeAl(degerlendirmeler,2));
 
 /*  Görev 7:  
 	Diziden en son değerlendirmeyi döndüren adı `SonDegerlendirmeyiAl` olan bir fonksiyon yazın 
@@ -178,10 +182,12 @@ function AnahtardanDegerlendirmeAl(/*Kodlar buraya*/) {
 	Not: Eğer 4. görevi başarıyla yaptıysanız kişinin geribildirimi boş görünmemeli
 */
 
-function SonDegerlendirmeyiAl(/*Kodlar buraya*/) {
-  /*Kodlar buraya*/
+function SonDegerlendirmeyiAl(receviedArray) {
+    const uzunluk=  receviedArray.length;
+  const cevap= receviedArray[uzunluk-1]["isim"]+" "+"isimli kişi"+" "+receviedArray[uzunluk-1]["puan"]+" "+"puan verdi ve şunları yazdı:"+" "+receviedArray[uzunluk-1]["geribildirim"];
+   return cevap;
 }
-
+console.log(SonDegerlendirmeyiAl(degerlendirmeler));
 /////////////// BONUS  GÖRVLER////////////////////
 
 /**  BONUS 1:  
